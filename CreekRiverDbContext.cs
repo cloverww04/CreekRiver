@@ -44,7 +44,9 @@ public class CreekRiverDbContext : DbContext
         new CampsiteType {Id = 1, CampsiteTypeName = "Tent", FeePerNight = 15.99M, MaxReservationDays = 7},
         new CampsiteType {Id = 2, CampsiteTypeName = "RV", FeePerNight = 26.50M, MaxReservationDays = 14},
         new CampsiteType {Id = 3, CampsiteTypeName = "Primitive", FeePerNight = 10.00M, MaxReservationDays = 3},
-        new CampsiteType {Id = 4, CampsiteTypeName = "Hammock", FeePerNight = 12M, MaxReservationDays = 7}
+        new CampsiteType {Id = 4, CampsiteTypeName = "Hammock", FeePerNight = 12M, MaxReservationDays = 7},
+        new CampsiteType {Id = 5, CampsiteTypeName = "Straw", FeePerNight = 17M, MaxReservationDays = 5},
+        new CampsiteType {Id = 6, CampsiteTypeName = "Rocks", FeePerNight = 5M, MaxReservationDays = 4},
         });
 
     }
