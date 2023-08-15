@@ -36,6 +36,25 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
+app.MapGet("/api/campsites", (CreekRiverDbContext db) => 
+{
+    return db.Campsites.ToList();
+});
+
+app.MapGet("/api/campsites/{id}", (CreekRiverDbContext db, int id) => 
+{
+    // using the Single method throws and exception so by using SingleOrDefault
+    // we are able to access the if statement allowing for the return of Results.NotFound()
+    var campsite = db.Campsites.Include(c => c.CampsiteType).SingleOrDefault(c => c.Id == id);
+
+    if( campsite == null ) 
+    {
+        return Results.NotFound();
+    }
+
+    return Results.Ok(campsite);
+});
+
 
 app.Run();
 
